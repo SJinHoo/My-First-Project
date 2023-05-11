@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody rigid;
     private float mouseSpeed = 3f;
+    
 
     public int JumpPower;
     public int MoveSpeed;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         Jump();
         transform.Rotate(0f, Input.GetAxis("Mouse X") * mouseSpeed, 0f, Space.World);
         transform.Rotate(-Input.GetAxis("Mouse Y") * mouseSpeed, 0f, 0f);
+        
     }
     void Move()
     {
@@ -33,6 +35,8 @@ public class PlayerController : MonoBehaviour
         float v = Input.GetAxis("Vertical");
 
         transform.Translate((new Vector3(h, 0, v) * MoveSpeed) * Time.deltaTime);
+               
+        
     }
     void Jump()
     {
