@@ -8,7 +8,7 @@ public class SetPlayer : MonoBehaviour
     void Start()
     {
         Debug.Log("Start");
-        name = gameObject.name;
+        Cube.name = "Player"
     }
 
     // Update is called once per frame
