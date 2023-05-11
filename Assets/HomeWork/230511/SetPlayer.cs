@@ -7,7 +7,8 @@ public class SetPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Player");
+        Debug.Log("Start");
+        name = gameObject.name;
     }
 
     // Update is called once per frame

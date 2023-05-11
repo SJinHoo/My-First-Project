@@ -16,7 +16,7 @@ public class Rigid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Jump();
+        
     }
 
     void Jump()
