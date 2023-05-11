@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rigid : MonoBehaviour
+public class Jump : MonoBehaviour
 {
     public int JumpPower;
     private Rigidbody rb;
@@ -10,16 +10,15 @@ public class Rigid : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Jump();
+        Jumping();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void Jump()
+    void Jumping()
     {
         rb.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
     }
