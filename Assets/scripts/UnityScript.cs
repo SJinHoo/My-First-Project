@@ -39,7 +39,7 @@ public class UnityScript : MonoBehaviour
     public List<int> list;
 
     [Header("Unity Type")]
-    public Vector3 vector3;     //
+    public Vector3 vector3;     
     public Color color;
     public LayerMask layerMask;
     public AnimationCurve curve;

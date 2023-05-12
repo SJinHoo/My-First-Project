@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         Move();
         Jump();
         transform.Rotate(0f, Input.GetAxis("Mouse X") * mouseSpeed, 0f, Space.World);
-        transform.Rotate(-Input.GetAxis("Mouse Y") * mouseSpeed, 0f, 0f);
+        
         
     }
     void Move()
