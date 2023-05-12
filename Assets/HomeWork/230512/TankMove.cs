@@ -33,7 +33,7 @@ public class TankMove : MonoBehaviour
 
     public void Rotate()
     {
-        transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime, Space.World);
+        transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime, Space.World);    // y 기준 회전
     }
 
     void OnMove(InputValue value)

@@ -11,7 +11,7 @@ public class Ball : MonoBehaviour
     [SerializeField]
     public int jumpPoower;
     [SerializeField]
-    private Vector3 moveDir;
+    
 
     private void Awake()
     {
@@ -48,7 +48,6 @@ public class Ball : MonoBehaviour
     }
     void OnMove(InputValue value)
     {
-        moveDir.x = value.Get<Vector2>().x;
-        moveDir.z = value.Get<Vector2>().y;
+        
     }
 }
