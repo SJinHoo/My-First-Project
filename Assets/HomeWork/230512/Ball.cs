@@ -22,7 +22,7 @@ public class Ball : MonoBehaviour
         Debug.Log(" 5월 12일 과제 시작!");
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         Move();

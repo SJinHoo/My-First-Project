@@ -5,14 +5,13 @@ using UnityEngine.InputSystem;
 
 public class TankMove : MonoBehaviour
 {
-    
+    Rigidbody rb;
     public Vector3 moveDir;
     [SerializeField]
     public int moveSpeed;
     [SerializeField]
-    public int JumpPower;
-    [SerializeField]
     public int rotateSpeed;
+    
 
     void Start()
     {
@@ -24,6 +23,7 @@ public class TankMove : MonoBehaviour
     {
         Move();
         Rotate();
+        
     }
     
     void Move()
@@ -42,4 +42,8 @@ public class TankMove : MonoBehaviour
         moveDir.z = value.Get<Vector2>().y;
         Move();
     }
+
+    
+
+    
 }
