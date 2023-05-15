@@ -13,7 +13,7 @@ public class TankMove : MonoBehaviour
     [SerializeField] public Bullet BulletPrefab;
     [SerializeField] private Transform bulletPoint;
     [SerializeField] public float repeatTime;
-    
+    [SerializeField] public float coolTime;
 
 
     void Start()
@@ -69,22 +69,27 @@ public class TankMove : MonoBehaviour
     {
         if (value.isPressed)
         {
+            Debug.Log("발사");
             Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
             bulletRoutine = StartCoroutine(BulletMakeRoutine());
         }
         else
         {
+            Debug.Log("발사 중지");
             StopCoroutine(bulletRoutine);
             
         }
     }
     IEnumerator BulletMakeRoutine()
     {
+        repeatTime = coolTime;
+        float RepeatTime = 0.1f;
         while(true)
         {
             Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
-            yield return new WaitForSeconds(repeatTime);
+            yield return new WaitForSeconds(RepeatTime);
         }
+        
     }
 
    
