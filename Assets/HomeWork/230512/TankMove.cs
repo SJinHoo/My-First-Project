@@ -6,14 +6,13 @@ using UnityEngine.InputSystem;
 
 public class TankMove : MonoBehaviour
 {
-    Rigidbody rb;
-    [SerializeField]  public Vector3 moveDir;
-    [SerializeField] public int moveSpeed;
-    [SerializeField] public int rotateSpeed;
-    [SerializeField] public Bullet BulletPrefab;
-    [SerializeField] private Transform bulletPoint;
-    [SerializeField] public float repeatTime;
-    [SerializeField] public float coolTime;
+    [SerializeField] Vector3 moveDir;
+    [SerializeField] int moveSpeed;
+    [SerializeField] int rotateSpeed;
+    [SerializeField] Bullet BulletPrefab;
+    [SerializeField] Transform bulletPoint;
+    [SerializeField] float repeatTime;
+    [SerializeField] float coolTime;
 
 
     void Start()
@@ -31,7 +30,7 @@ public class TankMove : MonoBehaviour
 
     void Move()
     {
-        transform.Translate(Vector3.forward * 10f * moveSpeed * Time.deltaTime * moveDir.z);
+        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime * moveDir.z);
     }
 
     

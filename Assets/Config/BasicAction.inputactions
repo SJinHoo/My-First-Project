@@ -179,7 +179,7 @@
                     "name": "",
                     "id": "78d12449-e561-4fa6-9710-85d060b1a078",
                     "path": "<Mouse>/rightButton",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
                     "action": "RepeatFire",

@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class MouseControl : MonoBehaviour
 {
-    
-    // Start is called before the first frame update
+    [SerializeField] float MrotSpeed;
+    [SerializeField] 
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        float MouseX = Input.GetAxis("Mouse X");
+        transform.Rotate(Vector3.up * MrotSpeed * MouseX);
+
     }
+
+    
 }

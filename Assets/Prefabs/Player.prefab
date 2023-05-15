@@ -453,11 +453,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDir: {x: 0, y: 0, z: 0}
-  moveSpeed: 2
+  moveSpeed: 100
   rotateSpeed: 180
-  JumpPower: 0
   BulletPrefab: {fileID: 7935062618928445464, guid: 0a22bff4214b0274d8296c175ca10c77, type: 3}
   bulletPoint: {fileID: 364316704}
+  repeatTime: 0
+  coolTime: 0
 --- !u!114 &4927426364685157537
 MonoBehaviour:
   m_ObjectHideFlags: 0
