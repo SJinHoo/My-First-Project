@@ -13,21 +13,21 @@ public class TankMove : MonoBehaviour
     public int rotateSpeed;
     [SerializeField]
     public int JumpPower;
-    
+
 
     void Start()
     {
-        
+
     }
 
-    
+
     void Update()
     {
         Move();
         Rotate();
-        
+
     }
-    
+
     void Move()
     {
         transform.Translate(Vector3.forward * 10f * moveSpeed * Time.deltaTime * moveDir.z);
@@ -40,15 +40,15 @@ public class TankMove : MonoBehaviour
 
     public void Rotate()
     {
-        transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime * moveDir.x);    // y 기준 회전
+        transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime * moveDir.x);    
     }
 
-    
+
     public void OnMove(InputValue value)
     {
         moveDir.x = value.Get<Vector2>().x;
         moveDir.z = value.Get<Vector2>().y;
-        
+
         // Vector2 movedir = value.Get<Vector2>();
     }
 
@@ -57,6 +57,6 @@ public class TankMove : MonoBehaviour
         //TODO
     }
 
-   
-   
+
+
 }
