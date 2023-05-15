@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class TankMove : MonoBehaviour
 {
     Rigidbody rb;
-    public Vector3 moveDir;
-    [SerializeField]
-    public int moveSpeed;
-    [SerializeField]
-    public int rotateSpeed;
-    [SerializeField]
-    public int JumpPower;
+    [SerializeField]  public Vector3 moveDir;
+    [SerializeField] public int moveSpeed;
+    [SerializeField] public int rotateSpeed;
+    [SerializeField] public Bullet BulletPrefab;
+    [SerializeField] private Transform bulletPoint;
+    [SerializeField] public float repeatTime;
+    
 
 
     void Start()
@@ -33,10 +34,7 @@ public class TankMove : MonoBehaviour
         transform.Translate(Vector3.forward * 10f * moveSpeed * Time.deltaTime * moveDir.z);
     }
 
-    void Jump()
-    {
-        rb.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
-    }
+    
 
     public void Rotate()
     {
@@ -52,11 +50,42 @@ public class TankMove : MonoBehaviour
         // Vector2 movedir = value.Get<Vector2>();
     }
 
-    public void OnJump()
+    /// <summary>
+    /// 기본 발사
+    /// </summary>
+    public Coroutine bulletRoutine;
+
+    public void OnFire(InputValue value)
     {
-        //TODO
+         Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);       
     }
 
 
+    /// <summary>
+    /// 연사
+    /// </summary>
+    /// <param name="value"></param>
+    public void OnRepeatFire(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
+            bulletRoutine = StartCoroutine(BulletMakeRoutine());
+        }
+        else
+        {
+            StopCoroutine(bulletRoutine);
+            
+        }
+    }
+    IEnumerator BulletMakeRoutine()
+    {
+        while(true)
+        {
+            Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
+            yield return new WaitForSeconds(repeatTime);
+        }
+    }
 
+   
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -108,8 +109,11 @@ public class UnityTransform : MonoBehaviour
         // transform.localRotation	: 부모트랜스폼이 있는 경우 부모를 기준으로 한 회전
         // transform.localScale		: 부모트랜스폼이 있는 경우 부모를 기준으로 한 크기
 
+        // 부모가 없는 월드기준으로 로컬이 잡히게됨
+
+
         // 부모 해제
-        transform.parent = null;
+        transform.parent = null;            // 부모 transform이 없는 모든 게임 오브젝트는 월드기준으로 잡힘
 
         // 월드를 기준으로한 트랜스폼
         // transform.localPosition == transform.position	: 부모트랜스폼이 없는 경우 월드를 기준으로 한 위치
