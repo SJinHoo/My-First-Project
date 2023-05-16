@@ -17,12 +17,10 @@ public class MouseControl : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         float MouseX = Input.GetAxis("Mouse X");
+        
         transform.Rotate(Vector3.up * MrotSpeed * MouseX);
+        
 
-        if (Input.GetKeyDown(KeyCode.LeftAlt))
-        {
-            Cursor.visible = true;
-        }
     }
 
     

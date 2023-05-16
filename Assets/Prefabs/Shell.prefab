@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 7935062618926442200}
   - component: {fileID: 7935062617466307509}
   - component: {fileID: -7229703305756581622}
-  m_Layer: 0
+  - component: {fileID: -8569320513747260769}
+  m_Layer: 7
   m_Name: Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ea2fb90b3502b4789804a2947b8b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 25
+  bulletSpeed: 20
+  explosionEffect: {fileID: 195792, guid: 89e78efe92dfe5a42837b392cdb0bf9e, type: 3}
 --- !u!54 &-7229703305756581622
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -114,3 +116,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &-8569320513747260769
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7935062618928445464}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 9ed1e8a25f964bd4298944675e425a0d, type: 3}

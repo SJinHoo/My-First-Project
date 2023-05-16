@@ -34,7 +34,7 @@
                 },
                 {
                     "name": "RepeatFire",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "2be432f6-8d1d-4c03-b88e-8c35e76d28fb",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -179,7 +179,7 @@
                     "name": "",
                     "id": "78d12449-e561-4fa6-9710-85d060b1a078",
                     "path": "<Mouse>/rightButton",
-                    "interactions": "Press(behavior=2)",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "RepeatFire",

@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     private Rigidbody rb;
     [SerializeField]
     private float bulletSpeed;
+    [SerializeField] private GameObject explosionEffect;
     
     private void Awake()
     {
@@ -20,5 +21,10 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, 5f);            // 5초뒤 삭제
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Instantiate(explosionEffect, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
     
 }

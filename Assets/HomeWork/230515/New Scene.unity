@@ -369,6 +369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4927426364685157536, guid: b0b5fed1ca4a1294ca12648503fadef0, type: 3}
+      propertyPath: BulletPrefab
+      value: 
+      objectReference: {fileID: 7935062617466307509, guid: 0a22bff4214b0274d8296c175ca10c77, type: 3}
     - target: {fileID: 4927426364685157550, guid: b0b5fed1ca4a1294ca12648503fadef0, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -379,11 +383,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4927426364685157550, guid: b0b5fed1ca4a1294ca12648503fadef0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.73
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 4927426364685157550, guid: b0b5fed1ca4a1294ca12648503fadef0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -9.66
       objectReference: {fileID: 0}
     - target: {fileID: 4927426364685157550, guid: b0b5fed1ca4a1294ca12648503fadef0, type: 3}
       propertyPath: m_LocalRotation.w

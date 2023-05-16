@@ -68,7 +68,6 @@ public class TankMove : MonoBehaviour
         if (value.isPressed)
         {
             Debug.Log("น฿ป็");
-            Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
             bulletRoutine = StartCoroutine(BulletMakeRoutine());
         }
         else
@@ -80,12 +79,10 @@ public class TankMove : MonoBehaviour
     }
     IEnumerator BulletMakeRoutine()
     {
-        repeatTime = coolTime;
-        float RepeatTime = 0.1f;
         while(true)
         {
             Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
-            yield return new WaitForSeconds(RepeatTime);
+            yield return new WaitForSeconds(repeatTime);
         }
         
     }
