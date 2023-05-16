@@ -25,7 +25,7 @@ public class TransformPractice : MonoBehaviour
     }
     void Move()
     {
-        transform.Translate(moveDir * moveSpeed *  Time.deltaTime);
+        transform.Translate(Vector3.forward * moveSpeed *  Time.deltaTime * moveDir.z);
     }
     void TransLateMove()
     {
@@ -47,7 +47,8 @@ public class TransformPractice : MonoBehaviour
         // 오일러를 이용한 회전
         //transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
         // x,y,z를 이용한 회전
-        transform.Rotate(0,1,0);
+        // transform.Rotate(0,1,0);
+        transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime * moveDir.x);
     }
 
     void LookAt()
@@ -64,6 +65,12 @@ public class TransformPractice : MonoBehaviour
 
         //Euler의 각도를 Quternion으로 변환
         transform.rotation = Quaternion.Euler(0, 90, 0);
+    }
+
+    void OnMove(InputValue value)
+    {
+        moveDir.x = value.Get<Vector2>().x;
+        moveDir.z = value.Get<Vector2>().y;
     }
 
     private void TransformParent()
@@ -89,11 +96,7 @@ public class TransformPractice : MonoBehaviour
         // transform.localRotation == transform.rotation	: 부모트랜스폼이 없는 경우 월드를 기준으로 한 회전
         // transform.localScale	                            : 부모트랜스폼이 없는 경우 월드를 기준으로 한 크기
 
-        void OnMove(InputValue value)
-        {
-            moveDir.x = value.Get<Vector2>().x;
-            moveDir.z = value.Get<Vector2>().y;
-        }
+        
     }
 }
 
