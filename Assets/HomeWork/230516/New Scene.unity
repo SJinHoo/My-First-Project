@@ -355,10 +355,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1754120714227625637, guid: b0b5fed1ca4a1294ca12648503fadef0, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 672a9941361ad494a99fba36759eca80, type: 3}
+    - target: {fileID: 1754120714227625637, guid: b0b5fed1ca4a1294ca12648503fadef0, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754120714227625637, guid: b0b5fed1ca4a1294ca12648503fadef0, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -8427302469363264956, guid: e965882c3a85adf4f9da109c842e702c, type: 2}
     - target: {fileID: 4927426364685130062, guid: b0b5fed1ca4a1294ca12648503fadef0, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4927426364685157536, guid: b0b5fed1ca4a1294ca12648503fadef0, type: 3}
+      propertyPath: ShotFireing
+      value: 
+      objectReference: {fileID: 8300000, guid: 672a9941361ad494a99fba36759eca80, type: 3}
     - target: {fileID: 4927426364685157550, guid: b0b5fed1ca4a1294ca12648503fadef0, type: 3}
       propertyPath: m_RootOrder
       value: 3

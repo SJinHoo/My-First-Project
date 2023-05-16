@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ea2fb90b3502b4789804a2947b8b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  shellExplosion: {fileID: 8300000, guid: 3a77defcde1caaa40b6f7502547e0c4e, type: 3}
   bulletSpeed: 20
   explosionEffect: {fileID: 195792, guid: 89e78efe92dfe5a42837b392cdb0bf9e, type: 3}
 --- !u!54 &-7229703305756581622

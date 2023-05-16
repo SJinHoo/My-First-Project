@@ -14,8 +14,9 @@ public class TankMove : MonoBehaviour
     [SerializeField] Transform bulletPoint;
     [SerializeField] float repeatTime;
     [SerializeField] float coolTime;
-    [SerializeField] AudioClip fireSfx;
-    [SerializeField] AudioSource audioSource = null;
+    [SerializeField] AudioClip ShotFireing;
+
+    AudioSource audioSource;
     
     void Start()
     {
@@ -33,6 +34,7 @@ public class TankMove : MonoBehaviour
     void Move()
     {
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime * moveDir.z);
+        
     }
 
     
@@ -57,7 +59,9 @@ public class TankMove : MonoBehaviour
 
     public void OnFire(InputValue value)
     {
-         Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);       
+        Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
+        PLaySoundSfx(ShotFireing);
+
     }
 
 
@@ -71,6 +75,7 @@ public class TankMove : MonoBehaviour
         {
             Debug.Log("น฿ป็");
             bulletRoutine = StartCoroutine(BulletMakeRoutine());
+            
         }
         else
         {
@@ -84,10 +89,15 @@ public class TankMove : MonoBehaviour
         while(true)
         {
             Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
+            PLaySoundSfx(ShotFireing);
             yield return new WaitForSeconds(repeatTime);
         }
         
     }
-
+    public void PLaySoundSfx(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
+    }
    
 }
