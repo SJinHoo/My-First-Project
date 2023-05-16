@@ -12,7 +12,7 @@ public class UnityGameObject : MonoBehaviour
 	 * 게임오브젝트는 컴포넌트들을 가지기 위한 컨테이너
 	 ************************************************************************/
 
-	GameObject gameObject;
+	// GameObject gameObject;
 
     // <게임오브젝트 구성요소>
     // name			: 게임오브젝트의 이름

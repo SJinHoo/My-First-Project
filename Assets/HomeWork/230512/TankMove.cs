@@ -46,7 +46,6 @@ public class TankMove : MonoBehaviour
         moveDir.x = value.Get<Vector2>().x;
         moveDir.z = value.Get<Vector2>().y;
 
-        // Vector2 movedir = value.Get<Vector2>();
     }
 
     /// <summary>
