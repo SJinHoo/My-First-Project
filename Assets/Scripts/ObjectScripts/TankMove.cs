@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(AudioSource))]
 public class TankMove : MonoBehaviour
 {
     [SerializeField] Vector3 moveDir;
@@ -13,11 +14,12 @@ public class TankMove : MonoBehaviour
     [SerializeField] Transform bulletPoint;
     [SerializeField] float repeatTime;
     [SerializeField] float coolTime;
-
-
+    [SerializeField] AudioClip fireSfx;
+    [SerializeField] AudioSource audioSource = null;
+    
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
 
