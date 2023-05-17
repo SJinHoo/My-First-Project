@@ -17,7 +17,12 @@ public class TankMove : MonoBehaviour
     [SerializeField] AudioClip ShotFireing;
 
     AudioSource audioSource;
-    
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -33,7 +38,7 @@ public class TankMove : MonoBehaviour
 
     void Move()
     {
-        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime * moveDir.z);
+        transform.Translate(moveDir* moveSpeed * Time.deltaTime);
         
     }
 
@@ -52,6 +57,11 @@ public class TankMove : MonoBehaviour
 
     }
 
+   public void Fire()
+    {
+        Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
+        animator.SetTrigger("Fire");
+    }
     /// <summary>
     /// 기본 발사
     /// </summary>
@@ -59,9 +69,8 @@ public class TankMove : MonoBehaviour
 
     public void OnFire(InputValue value)
     {
-        Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
-        PLaySoundSfx(ShotFireing);
-
+        Fire();
+        
     }
 
 
@@ -89,6 +98,7 @@ public class TankMove : MonoBehaviour
         while(true)
         {
             Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
+            animator.SetTrigger("Fire");
             PLaySoundSfx(ShotFireing);
             yield return new WaitForSeconds(repeatTime);
         }
