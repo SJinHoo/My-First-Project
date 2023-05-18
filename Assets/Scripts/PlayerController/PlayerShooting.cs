@@ -34,6 +34,7 @@ public class PlayerShooting : MonoBehaviour
         Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
         animator.SetTrigger("Fire");
         OnFired?.Invoke();
+
         //GameManager.Data.AddShootCount(1);
     }
 
@@ -41,6 +42,7 @@ public class PlayerShooting : MonoBehaviour
     public void OnFire(InputValue value)
     {
         Fire();
+        
     }
 
     public void OnRapidFire(InputValue value)
