@@ -616,6 +616,14 @@ PrefabInstance:
       propertyPath: Turretcam
       value: 
       objectReference: {fileID: 191226483}
+    - target: {fileID: 6680147804971387950, guid: b0b5fed1ca4a1294ca12648503fadef0, type: 3}
+      propertyPath: Basiccam
+      value: 
+      objectReference: {fileID: 1106970124}
+    - target: {fileID: 6680147804971387950, guid: b0b5fed1ca4a1294ca12648503fadef0, type: 3}
+      propertyPath: Turretcam
+      value: 
+      objectReference: {fileID: 191226483}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0b5fed1ca4a1294ca12648503fadef0, type: 3}
 --- !u!1 &723264791

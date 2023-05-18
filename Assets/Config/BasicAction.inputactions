@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "RepeatFire",
+                    "name": "RapidFire",
                     "type": "PassThrough",
                     "id": "2be432f6-8d1d-4c03-b88e-8c35e76d28fb",
                     "expectedControlType": "Button",
@@ -246,7 +246,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RepeatFire",
+                    "action": "RapidFire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

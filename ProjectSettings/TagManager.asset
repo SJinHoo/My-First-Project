@@ -14,7 +14,7 @@ TagManager:
   - UI
   - PlayerLayer
   - BulletLayer
-  - 
+  - backgroundLayer
   - 
   - 
   - 
@@ -41,4 +41,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 
+    uniqueID: 1012835525
     locked: 0

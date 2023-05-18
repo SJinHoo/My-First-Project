@@ -56,21 +56,27 @@ public class TankMove : MonoBehaviour
         moveDir.z = value.Get<Vector2>().y;
 
     }
-
+    /// <summary>
+    /// Basic Fire
+    /// </summary>
    public void Fire()
     {
         Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
         animator.SetTrigger("Fire");
+        PLaySoundSfx(ShotFireing);
+        
+        
     }
-    /// <summary>
-    /// 기본 발사
-    /// </summary>
+    
     public Coroutine bulletRoutine;
 
+    /// <summary>
+    /// Input system 사격
+    /// </summary>
+    /// <param name="value"></param>
     public void OnFire(InputValue value)
     {
-        Fire();
-        
+        Fire();      
     }
 
 
@@ -78,7 +84,7 @@ public class TankMove : MonoBehaviour
     /// 연사
     /// </summary>
     /// <param name="value"></param>
-    public void OnRepeatFire(InputValue value)
+    public void OnRapidFire(InputValue value)
     {
         if (value.isPressed)
         {
@@ -93,17 +99,25 @@ public class TankMove : MonoBehaviour
             
         }
     }
+
+    /// <summary>
+    /// 연사 코루틴
+    /// </summary>
+    /// <returns></returns>
     IEnumerator BulletMakeRoutine()
     {
         while(true)
         {
-            Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
-            animator.SetTrigger("Fire");
-            PLaySoundSfx(ShotFireing);
+            Fire();
             yield return new WaitForSeconds(repeatTime);
         }
         
     }
+
+    /// <summary>
+    /// SFX 클립 함수
+    /// </summary>
+    /// <param name="clip"></param>
     public void PLaySoundSfx(AudioClip clip)
     {
         audioSource.clip = clip;

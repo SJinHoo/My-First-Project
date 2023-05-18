@@ -10,12 +10,13 @@ public class ShellExploSound : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        SoundSfx(shellExplosion);
+        Destroy(gameObject, 3f);
     }
 
     
     void Update()
     {
-        SoundSfx(shellExplosion);
     }
     public void SoundSfx(AudioClip clip)
     {
