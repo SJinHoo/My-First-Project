@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(AudioSource))]
@@ -19,6 +20,8 @@ public class TankMove : MonoBehaviour
     AudioSource audioSource;
     private Animator animator;
 
+    public UnityEvent OnFired;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -33,12 +36,12 @@ public class TankMove : MonoBehaviour
     {
         Move();
         Rotate();
-
+        //LookAt();
     }
 
     void Move()
     {
-        transform.Translate(moveDir* moveSpeed * Time.deltaTime);
+        transform.Translate(moveDir * moveSpeed * Time.deltaTime);
         
     }
 
@@ -49,23 +52,36 @@ public class TankMove : MonoBehaviour
         transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime * moveDir.x);    
     }
 
+    public void LookAt()
+    {
+        transform.LookAt(transform.position + moveDir);
+    }
+
 
     public void OnMove(InputValue value)
     {
         moveDir.x = value.Get<Vector2>().x;
         moveDir.z = value.Get<Vector2>().y;
+    }
 
+    public void OnEnable()
+    {
+        
+    }
+
+    public void OnDisable()
+    {
+        
     }
     /// <summary>
     /// Basic Fire
     /// </summary>
-   public void Fire()
+    public void Fire()
     {
         Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
-        animator.SetTrigger("Fire");
         PLaySoundSfx(ShotFireing);
-        
-        
+        animator.SetTrigger("Fire");
+        GameManager.Data.AddShootCount(1);
     }
     
     public Coroutine bulletRoutine;
@@ -76,7 +92,9 @@ public class TankMove : MonoBehaviour
     /// <param name="value"></param>
     public void OnFire(InputValue value)
     {
-        Fire();      
+        Fire();
+        OnFired?.Invoke();
+        
     }
 
 
@@ -95,8 +113,7 @@ public class TankMove : MonoBehaviour
         else
         {
             Debug.Log("발사 중지");
-            StopCoroutine(bulletRoutine);
-            
+            StopCoroutine(bulletRoutine);          
         }
     }
 
