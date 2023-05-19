@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class DataManager : MonoBehaviour
 {
     [SerializeField] private int shootCount;
-    public UnityEvent<int> OnShootCountChanged;
+    public UnityAction<int> OnShootCountChanged;
     public void AddShootCount(int count)
     {
         shootCount += count;

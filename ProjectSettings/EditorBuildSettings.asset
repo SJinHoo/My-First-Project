@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/HomeWork/230517/TitleScene.unity
-    guid: fe725b4c18e52a0459b7edd426d456c4
+    path: Assets/HomeWork/230518/TitleScene.unity
+    guid: 9c3474b5d24905646869b426d2ffcff9
   - enabled: 1
-    path: Assets/HomeWork/230517/GameScene.unity
-    guid: 4dd2fc941b539c54284fabfc124a171c
+    path: Assets/HomeWork/230518/230518.unity
+    guid: 8ae6995e5ff20e842ad99a78403f2b93
   m_configObjects: {}

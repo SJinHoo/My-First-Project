@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -32,10 +33,10 @@ public class PlayerShooting : MonoBehaviour
     public void Fire()
     {
         Instantiate(BulletPrefab, bulletPoint.position, bulletPoint.rotation);
-        animator.SetTrigger("Fire");
+        
         OnFired?.Invoke();
 
-        //GameManager.Data.AddShootCount(1);
+        GameManager.Data.AddShootCount(1);
     }
 
     public Coroutine bulletRoutine;
@@ -71,4 +72,8 @@ public class PlayerShooting : MonoBehaviour
 
     }
 
+    public void Test(int count)
+    {
+        Debug.Log($"데이터의 슛 카운트가 {count}로 바뀜");
+    }
 }

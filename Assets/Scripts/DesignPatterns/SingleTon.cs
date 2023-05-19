@@ -30,6 +30,8 @@ using UnityEngine;
 		3. 싱글톤의 데이터를 공유할 경우 데이터 변조에 주의해야함
 	*/
 
+	// 관리자의 역할을 하게 될 경우 싱글톤 패턴으로 구현 해준다.
+
 
 public class SingleTon
 {
@@ -39,16 +41,18 @@ public class SingleTon
     {
         get
         {
+			// 내부에서 인스턴스가 없는경우 인스턴스를 만들어주고
             if (instance == null)
                 instance = new SingleTon();
-
+			// 있다면 인스턴스를 그대로 리턴해준다
             return instance;
         }
     }
 
-	private SingleTon() { }
+	private SingleTon() { }	// 생성자를 private으로 선언을 해서 외부에서 new를 통해 여러 개를 만들 수 없게 제한
 }
 
+// 외부에서 싱글톤을 쓸 경우 inventory 예제
 public class Player
 {
 
@@ -60,6 +64,7 @@ public class Player
 		SingleTon inven4 = SingleTon.Instance;
 
 		// error : SingleTon inven5 = new SingleTon();
-		// 
+		// 외부에서 임의로 생성 못하게 제한 하고
+		// instance는 반드시 하나만 가질 수 있도록 제한하는 것이 바로 SingleTon 디자인 패턴이다
 	}
 }
